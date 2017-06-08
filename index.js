@@ -37,7 +37,7 @@ GET Request with custom header
 
 request({
   headers : {
-    'authorization': 'Bearer A23AAHqwRjpvsvc8VtjTNzgWQyjN4tPw67-xUjXIf3OiirKyLLr0noYF5dlDHbIYFVtSLcA73V6OEw7zaTUtSjVjMKxoEaGjA',
+    'authorization': 'Bearer <>',
     'accept' : 'application/json',
     'accept_language': 'en_US',
     'content_type': 'application/x-www-form-urlencoded'
