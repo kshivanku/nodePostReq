@@ -1,6 +1,10 @@
 var querystring = require('querystring');
 var request = require('request');
 
+/**********
+POST request with custom headers and request body
+***********/
+
 //form is the body that you want to send with POST request
 var form = {
   'grant_type' : 'refresh_token',
@@ -27,56 +31,19 @@ request({
 });
 
 
+/**********
+GET Request with custom header
+***********/
 
-
-
-
-
-
-
-// var http = require('http');
-//
-// const options = {
-//   hostname: 'https://api.sandbox.paypal.com/v1/payments/personal-payments/eligibility',
-//   headers: {
-//     'authorization': 'bearer A23AAHz6oMto_wcySjhF2am2uwN8cWRvGeMqUpHt3ljgimX8V0zXPueN9kyxZqYp0pFH-0PA76ehc7uwFFUdwUHXxXGJarQGw',
-//         'accept': 'application/json',
-//         'accept-language': 'en_US',
-//         'content-type': 'application/x-www-form-urlencoded'
-//   }
-// }
-//
-// http.request(options, (err, res) => {
-//   console.log('Status: ' + res.statusCode);
-//   res.on('data', (chunk) =>{
-//     console.log(`Body: ${chunk}`);
-//   })
-//   if err throw err;
-// });
-
-
-
-// const request = require('request');
-// request('http://google.com', function(err, response, body){
-//   console.log('error: ', err);
-//   console.log('response: ', response);
-//   // console.log('body: ', body);
-// })
-
-// const url = "https://api.sandbox.paypal.com/v1/payments/personal-payments/eligibility"
-
-// var options = {
-//   url: 'https://api.sandbox.paypal.com/v1/payments/personal-payments/eligibility',
-//   headers: {
-//     'authorization': 'bearer A23AAHz6oMto_wcySjhF2am2uwN8cWRvGeMqUpHt3ljgimX8V0zXPueN9kyxZqYp0pFH-0PA76ehc7uwFFUdwUHXxXGJarQGw',
-//     'accept': 'application/json',
-//     'accept-language': 'en_US',
-//     'content-type': 'application/x-www-form-urlencoded'
-//   }
-// }
-//
-// request(options, function(err, httpResponse, body){
-//   console.log('httpResponse: ', httpResponse);
-//   // console.log('body: ', body);
-//   // console.log('err: ', err);
-// });
+request({
+  headers : {
+    'authorization': 'Bearer A23AAHqwRjpvsvc8VtjTNzgWQyjN4tPw67-xUjXIf3OiirKyLLr0noYF5dlDHbIYFVtSLcA73V6OEw7zaTUtSjVjMKxoEaGjA',
+    'accept' : 'application/json',
+    'accept_language': 'en_US',
+    'content_type': 'application/x-www-form-urlencoded'
+  },
+  uri: 'https://api.sandbox.paypal.com/v1/payments/personal-payments/eligibility',
+  method: 'GET'
+}, function(err, response, body){
+  console.log('body',body);
+});
